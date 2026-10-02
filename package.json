@@ -1,16 +1,54 @@
 {
-  "name": "theme-kit",
-  "private": true,
-  "version": "0.0.0",
+  "name": "theme-config",
+  "version": "1.0.1",
+  "description": "One theme engine. Light, dark, and unlimited custom themes.",
   "type": "module",
+  "author": "Muhammad <contact@dev-muhammad.vercel.app> (https://dev-muhammad.vercel.app)",
+  "license": "MIT",
+  "homepage": "https://github.com/unfathomable-08/theme-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unfathomable-08/theme-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unfathomable-08/theme-config/issues"
+  },
+  "main": "./dist/theme-config.cjs",
+  "module": "./dist/theme-config.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/theme-config.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/theme-config.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "vite build",
+    "build:types": "tsc --emitDeclarationOnly --declaration",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
+  "keywords": [
+    "theme",
+    "dark-mode",
+    "css-variables",
+    "theme-switcher",
+    "multi-theme"
+  ],
   "devDependencies": {
     "@types/node": "^26.6.4",
     "typescript": "~6.0.2",
-    "vite": "^8.3.2"
+    "vite": "^8.3.2",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
